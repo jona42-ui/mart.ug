@@ -1,4 +1,3 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,42 +11,71 @@
         <%@page import="java.sql.SQLException"%>
         <%@page import="java.sql.Connection"%>
         <%@page import="java.sql.DriverManager"%>
+        <%@page import="java.sql.PreparedStatement"%>
         
         
         <%
-          
+            
             String name = request.getParameter("name");
             String gender = request.getParameter("gender");
             String location = request.getParameter("location");
             String email = request.getParameter("email");
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            String role = request.getParameter("role");
-           
-            out.println(name);
+            String confirm = request.getParameter("confirm");
           
             //step 1 load the jdbc driver
-
-            Statement st = null;
+            
+            if(password.equals(confirm)){
+                 
+                Statement st = null;
+                PreparedStatement ps = null;
+                
             
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mart","root","");
-                st = con.createStatement();
-               
-                String sql = "insert into users(user,gender,location,email,user_name,password,role) "
-                            + "value('"+name+"','"+gender+"','"+location+"','"+email+"','"+username+"','"+password+"','"+role+"')";
-                            
-                st.executeUpdate(sql);
                 
-            }catch(ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
-            }
                 
-               
+                String mysql = "SELECT * FROM users WHERE email = ?";
+                ps = con.prepareStatement(mysql);
+                
+                ps.setString(1, email);
+                ResultSet rs = ps.executeQuery();
+                
+                if(rs.next()){
+                    request.setAttribute("user", "User already exist!");
+                    request.getRequestDispatcher("custregister.jsp").forward(request, response);
+                    return;
+                }else {
+                
+                    st = con.createStatement();
+                    st.executeUpdate("insert into users set user='"+name+"',email='"+email+"',user_name='"+username+"',location='"+location+"',gender='"+gender+"',password='"+password+"'");
+              
+                }
+                
+                
+                }catch(ClassNotFoundException | SQLException e) {
+                    e.printStackTrace();
+                }
+                 
+            }else {
+            
+                request.setAttribute("error", "passwords do not match!");
+                request.getRequestDispatcher("custregister.jsp").forward(request, response);
+                return;
+            }     
                
         %>
         
-        successful
+        <% 
+            request.setAttribute("success", "Welcome to Mart!");
+            request.setAttribute("user", name);
+            request.getRequestDispatcher("/DashboardCustomer.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/DashboardCustomer.jsp"); 
+           
+        
+        %>
+               
     </body>
 </html>

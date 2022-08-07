@@ -71,7 +71,7 @@
                         <input type="submit" class="btn btn-block btn-primary col-md-6 form-group" name="submit" value="Log in">
                     </form>
                     <p class="link">HAVE AN ACCOUNT?</p><br>
-                    <a href="custregister.jsp">LOGIN HERE</a>
+                    <a href="login.jsp">LOGIN HERE</a>
                  </div>
         </div>
     </div>

@@ -92,8 +92,18 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="#statistics" class="nav-item nav-link">Stats</a>
                             <a href="#category" class="nav-item nav-link">Category</a>
-                            <a href="#featured_products" class="nav-item nav-link">Products</a>
+   
                             <a href="#contactus" class="nav-item nav-link">Contact</a>
+                            <a href="productLine.jsp" class="nav-item nav-link">Product Line</a>
+                            <div class="btn-group">
+                               <button type="button" class="ml-5 btn btn-sm btn-white dropdown-toggle bg-primary text-dark " data-toggle="dropdown">Products</button>
+                               <div class="dropdown-menu dropdown-menu-right">
+                        
+                                <a href="#featured_products" class="dropdown-item">VIEW</a>
+                                <a href="addProduct.jsp" class="dropdown-item">ADD</a>
+                               
+                              </div>
+                            </div>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">

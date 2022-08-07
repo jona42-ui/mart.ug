@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/sam/Desktop/Year%202%20notes/NAD/Mart.ug/web/welcome.jsp</file>
-            <file>file:/home/sam/Desktop/Year%202%20notes/NAD/Mart.ug/web/custregister.jsp</file>
-            <file>file:/home/sam/Desktop/Year%202%20notes/NAD/Mart.ug/web/WEB-INF/web.xml</file>
-            <file>file:/home/sam/Desktop/Year%202%20notes/NAD/Mart.ug/web/index.html</file>
-            <file>file:/home/sam/Desktop/Year%202%20notes/NAD/Mart.ug/web/login.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/addProduct.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/adminEditProductAction.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/productLine.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/adminEditProduct.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/includes/manager_navbar.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/DashboardManager.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/productLineAction.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/DashboardStaff.jsp</file>
+            <file>file:/home/thembo/Documents/mart.ug/web/addProductAction.jsp</file>
         </group>
     </open-files>
 </project-private>
